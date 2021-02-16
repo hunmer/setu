@@ -1,0 +1,168 @@
+body {
+	overflow-x: hidden;
+}
+
+.area {
+	border: 1px solid red;
+	z-index: 999999;
+	position: absolute;
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+
+#div_tips img {
+	background-size: cover;
+	background-image: url(../img/default.png);
+	width: 30px;
+	height: 30px;
+	margin-left: 10px;
+}
+
+#div_tips li {
+	text-align: right;
+	border: 0;
+    background-color: unset
+}
+#div_tips li span {
+	background-color: rgba(0,0, 0, .4);
+    color: white;
+    padding: 5px;
+}
+
+#div_tips ul {
+	background-color: unset;
+}
+
+#img_userCover {
+	background-size: cover;
+	background-image: url(../img/default.png);
+	width: 60px;
+	height: 60px;
+}
+
+#pic {
+	background-size: cover;
+	user-select: none;
+}
+
+textarea {
+	text-align: center;
+	background-color: rgba(0, 0, 0, .3);
+	border: 0;
+	width: 100%;
+	height: 100%;
+	resize: none;
+}
+
+.area_show {
+	border: 1px solid #03a9f4;
+	position: relative;
+}
+
+.round {
+	border-radius: 50%;
+}
+
+svg,img {
+	cursor: pointer;
+}
+
+#area_select {
+	color: white;
+}
+
+.arrow {  
+    width: 0;  
+    height: 0;  
+    font-size: 0;  
+    border-width: 10px;  
+    border-style: solid;  
+    position: absolute;  
+    bottom: 0px;  
+    border-color: transparent transparent transparent #cce5ff;  
+    right: -20px;  
+}  
+
+.tag_layout .badge {
+	right: 0px;
+	top: 0px;
+}
+
+.msg {
+	width: 100%;
+}
+
+.msg_content {
+	max-width: 80%;
+	margin-left: 10px;
+	width: fit-content;
+    float: right;
+    margin-right: 70px;
+}
+
+/*.msg:nth-last-child(1) {
+	margin-bottom: 500px;
+}
+*/
+.user_cover {
+	border-radius: 50%;
+	position: absolute;
+	right: 10px;
+
+}
+
+.tag_like {
+	border: 3px solid #4caf50 !important;
+}
+
+.cover_list span {
+	width: 50px;
+	max-width: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#div_chat_list {
+	height: 220px;
+	max-height: 220px;
+	overflow: auto;
+	user-select: none;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/  
+::-webkit-scrollbar  
+{  
+    width: 3px;  /*滚动条宽度*/
+    height: 3px;  /*滚动条高度*/
+}  
+  
+/*定义滚动条轨道 内阴影+圆角*/  
+::-webkit-scrollbar-track  
+{  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  
+    border-radius: 10px;  /*滚动条的背景区域的圆角*/
+}  
+  
+/*定义滑块 内阴影+圆角*/  
+::-webkit-scrollbar-thumb  
+{  
+    border-radius: 10px;  /*滚动条的圆角*/
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);  
+    background-color: #03a9f4;
+}  
+
+.blink-1{animation:blink-1 .6s both}
+
+#status_bar {
+
+}
+
+.width_client {
+	top: 0;
+    right: 0;
+    width: 27%;
+    position: inherit;
+}

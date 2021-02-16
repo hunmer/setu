@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>色图(徒)</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="block-all-mixed-content">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="full-screen" content="yes">
+    <meta name="browsermode" content="application">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="x5-page-mode" content="app">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="Author" contect="liaoyanjie2000@gmail.com">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/hsycmsAlert.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body style="background-image: url(./img/background.jpg);">
+    <!-- <div class="modal fade text-center" tabindex="9999" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="modal_music" style="z-index: 9999">
+        <div class="modal-dialog">
+            <div class="modal-content  p-3">
+                <div class="modal-header">
+                    <h5 class="modal-title">音楽</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <input class="col-10" style="width: 80%" type="text" id="input_music" placeholder="名前" value="猫" onkeydown="if(event.keyCode == 13) $('#btn_search_music')[0].click();">
+                            <button id="btn_search_music" onclick="search('music', $('#input_music').val())" class="btn btn-success col-2">検索</button>
+                            <div class="checkbox_list">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" onchange="var b = this.checked;$(this).parents('.checkbox_list').find('input[type=checkbox]').prop('checked', b);" type="checkbox" id="check_all">
+                                    <label class="form-check-label" for="check_all">all</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input data-action="fitler_site" class="form-check-input" type="checkbox" id="check_netease" value="netease" checked>
+                                    <label class="form-check-label" for="check_netease">netease</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input data-action="fitler_site" class="form-check-input" type="checkbox" id="check_tencent" value="tencent">
+                                    <label class="form-check-label" for="check_tencent">tencent</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input data-action="fitler_site" class="form-check-input" type="checkbox" id="check_xiami" value="xiami">
+                                    <label class="form-check-label" for="check_xiami">xiami</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input data-action="fitler_site" class="form-check-input" type="checkbox" id="check_youtube" value="youtube" checked>
+                                    <label class="form-check-label" for="check_youtube">youtube</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input data-action="fitler_site" class="form-check-input" type="checkbox" id="check_kugou" value="kugou">
+                                    <label class="form-check-label" for="check_kugou">kugou</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input data-action="fitler_site" class="form-check-input" type="checkbox" id="check_baidu" value="baidu">
+                                    <label class="form-check-label" for="check_baidu">baidu</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" id="list_music">
+                            <ul class="list-group list-group-flush">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+<!-- 顶部弹出 -->
+<div class="modal fade" tabindex="999" id="modal_bottom" >
+  <div class="modal-dialog fixed-bottom w-100 m-0" style="width: 100%;max-width: unset;">
+    <div class="modal-content" >
+      <div class="modal-header">
+        <h5 class="modal-title">更多操作</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row text-center">
+          <div class="menu_icons col-4">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-download " fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+  <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+</svg>
+<span class="pl-1">APP</span>
+          </div>
+ <div class="menu_icons col-4" onclick="alert('规则:游戏开始后可以长按图片选择一部分加上标签,标记时间结束后将进入展示阶段,点击标签可以进行投票.无回合限制.')">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+  <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+</svg>
+<span class="pl-1">游戏规则</span>
+          </div>      
+ <div class="menu_icons col-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-collection-fill" viewBox="0 0 16 16">
+  <path d="M0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zM2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1z"/>
+</svg>
+<span class="pl-1">我的记录</span>
+          </div>              
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="modal fade" id="modal_user" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered " role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">加入游戏</h5>
+                </div>
+                <div class="modal-body row">
+                    <div class="col-12 text-center">
+                        <img id='img_userCover' class="round">
+                        <div class="col-12 mt-1 text-center">
+                            <button type="button" class="btn btn-primary" onclick="$('#input_updload')[0].click();">上传头像</button>
+                            <button type="button" class="btn btn-primary" onclick="var qq = prompt('请输入QQ号', '1312552724');if(qq){$('#img_userCover').css('backgroundImage', 'url(http://q1.qlogo.cn/g?b=qq&nk='+qq+'&s=640)')}">从QQ导入</button>
+                        </div>
+                    </div>
+                    <div class="form-group col-12 pt-1">
+                        <label for="exampleInputEmail1">名字</label>
+                        <input type="text" class="form-control" id="input_user" placeholder="不填随机取名" onkeydown="if(event.keyCode == 13) checkUser();">
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="checkUser(true);">旁观</button>
+                    <button type="button" class="btn btn-primary" onclick="checkUser();">加入</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div id="pic">
+            <textarea class="area" id="area_select" disabled></textarea>
+        </div>
+    </div>
+    <div class="fixed-bottom" id="div_tips" style="pointer-events: none;">
+        <div id="status_bar">
+            <span id="span_status" class="badge bg-secondary text-white col-12">游戏人数不足</span>
+            <div class="cover_list row">
+                <!--  <div class="col-2 text-center" data-action="selectUser" data-user="maki">
+                     <img style="border-radius: 50%;" src='img/maki.jpg' width="45" height="45">
+                    <span class="badge bg-secondary">offline</span>
+                </div>
+                <div class="col-2" data-action="selectUser" data-user="chisato">
+                     <img style="border-radius: 50%;" src='img/chisato.jpg' width="45" height="45">
+                    <span class="badge bg-secondary">offline</span>
+                </div> -->
+            </div>
+        </div>
+        <div id="div_chat_list">
+            <ul class="list-group">
+                <!-- <li class="list-group-item">
+                  <span>ssdsds</span>
+                  <img id='img_userCover' class="round">
+              </li> -->
+            </ul>
+        </div>
+        <div class="row text-center pb-1" style="pointer-events: all;">
+            <div class="col-2">
+                <svg data-action="emoji" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-emoji-wink" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm1.757-.437a.5.5 0 0 1 .68.194.934.934 0 0 0 .813.493c.339 0 .645-.19.813-.493a.5.5 0 1 1 .874.486A1.934 1.934 0 0 1 10.25 7.75c-.73 0-1.356-.412-1.687-1.007a.5.5 0 0 1 .194-.68z" />
+                </svg>
+            </div>
+            <div class="col-2">
+                <svg data-action="chat" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
+                    <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                </svg>
+            </div>
+            <div class="col-2">
+                <svg data-action="download" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                </svg>
+            </div>
+            <div class="col-2">
+                <input id="input_updload1" type="file" accept="image/*" style="width:1px;height:1px;cursor:pointer;font-size:30px;outline:medium none;position: absolute;filter:alpha(opacity=0);-moz-opacity:0;opacity:0;left:-10px;top:-10px;" onchange="uploadImage(this.files[0], true)">
+                <svg data-action="selectImage" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-image" viewBox="0 0 16 16">
+                    <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                    <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5h13z" />
+                </svg>
+            </div>
+            <div class="col-2">
+                <svg data-action="favorite" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
+                    <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z" />
+                </svg>
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-check-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm8.854-9.646a.5.5 0 0 0-.708-.708L7.5 7.793 6.354 6.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+</svg> -->
+            </div>
+            <div class="col-2">
+                <svg data-action="more" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                    <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <input id="input_updload" type="file" accept="image/*" style="width:1px;height:1px;cursor:pointer;font-size:30px;outline:medium none;position: absolute;filter:alpha(opacity=0);-moz-opacity:0;opacity:0;left:-10px;top:-10px;" onchange="uploadImage(this.files[0])">
+    <!-- 弹窗插件 -->
+    <!--普通弹窗-->
+    <div class="hsycms-model-mask" id="mask-alert"></div>
+    <div class="hsycms-model hsycms-model-alert" id="alert">
+        <div class="hscysm-model-title">确定</div>
+        <div class="hsycms-model-text">这里是内容</div>
+        <div class="hsycms-model-btn">
+            <button type="button ok">好的</button>
+        </div>
+    </div>
+    <!--提示弹窗-->
+    <div class="hsycms-model-mask" id="mask-tips"></div>
+    <div class="hsycms-model hsycms-model-tips" id="tips">
+        <div class="hsycms-model-text">这里是提示内容</div>
+    </div>
+    <!--询问弹窗-->
+    <div class="hsycms-model-mask" id="mask-confirm"></div>
+    <div class="hsycms-model hsycms-model-confirm" id="confirm">
+        <div class="hscysm-model-title">确定</div>
+        <div class="hsycms-model-text">确定操作吗？</div>
+        <div class="hsycms-model-btn">
+            <button type="button" class="cancel">否</button>
+            <button type="button" class="ok">是</button>
+        </div>
+    </div>
+    <div class="hsycms-model-mask" onclick="hsycms.closeAll()" id="mask-model"></div>
+    <div class="hsycms-model hsycms-model-model" id="model">
+        <div class="hscysm-model-title">自定义弹窗</div>
+        <div class="hsycms-model-content"></div>
+    </div>
+    <!--提交成功-->
+    <div class="hsycms-model-mask" id="mask-success"></div>
+    <div class="hsycms-model hsycms-model-success" id="success">
+        <div class="hsycms-model-icon">
+            <svg width="50" height="50">
+                <circle class="hsycms-alert-svgcircle" cx="25" cy="25" r="24" fill="none" stroke="#238af4" stroke-width="2"></circle>
+                <polyline class="hsycms-alert-svggou" fill="none" stroke="#238af4" stroke-width="2.5" points="14,25 23,34 36,18" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </div>
+        <div class="hsycms-model-text">操作成功</div>
+    </div>
+    <!--提交失败-->
+    <div class="hsycms-model-mask" id="mask-error"></div>
+    <div class="hsycms-model hsycms-model-error" id="error">
+        <div class="hsycms-model-icon">
+            <svg width="50" height="50">
+                <circle class="hsycms-alert-svgcircle" cx="25" cy="25" r="24" fill="none" stroke="#f54655" stroke-width="2"></circle>
+                <polyline class="hsycms-alert-svgca1" fill="none" stroke="#f54655" stroke-width="2.5" points="18,17 32,35" stroke-linecap="round" stroke-linejoin="round" />
+                <polyline class="hsycms-alert-svgca2" fill="none" stroke="#f54655" stroke-width="2.5" points="18,35 32,17" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </div>
+        <div class="hsycms-model-text">操作失败</div>
+    </div>
+    <!--这是Loading-->
+    <div class="hsycms-model-mask" id="mask-loading"></div>
+    <div class="hsycms-model hsycms-model-loading" id="loading" onclick=" hsycms.hideLoading();">
+        <div class="hsycms-model-load">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="hsycms-model-text">加载中</div>
+    </div>
+    <audio id='audio_tip' autoplay></audio>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/until.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/hsycmsAlert.js"></script>
+<script src="js/lazyload.min.js"></script>
+<script src="js/clipboard.min.js"></script>
+<script src="js/index.js"></script>
+
+</html>
